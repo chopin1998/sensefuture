@@ -1,0 +1,22 @@
+[project]
+name = "sensefuture"
+version = "0.1.0"
+description = "Linux Qt workbench for SenseFuture temperature controllers"
+requires-python = ">=3.12"
+dependencies = ["PyQt6==6.10.0", "PyQt6-Qt6==6.10.0", "PyQt6-sip==13.10.2", "numpy==2.3.1", "pyqtgraph==0.13.7", "pyserial==3.5"]
+
+[project.scripts]
+sensefuture = "sensefuture.app:main"
+
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sensefuture"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
