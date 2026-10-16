@@ -75,7 +75,8 @@ class Simulator:
                 power = self.values[k + "PWMDUTY"] / 20000
                 if not self.values[k + "ENABLE"]:
                     power = 0
-                goal = 25 + power * 0.7
+                # Match the reported stage polarity: negative manual voltage heats.
+                goal = 25 - power * 0.7
             else:
                 self.values[k + "PWMDUTY"] = int(power * 20000) if self.values[k + "ENABLE"] else 0
             temp += (goal - temp) * (1 - math.exp(-dt / 18))

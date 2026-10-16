@@ -52,6 +52,8 @@ class Parameter:
     def display(self, value: int | str) -> str:
         if self.command == "TEC" and isinstance(value, str):
             return value
+        if self.unit == "°C":
+            return format(Decimal(value) / self.scale, ".3f")
         return format(Decimal(value) / self.scale, "f")
 
 

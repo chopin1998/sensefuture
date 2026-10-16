@@ -1,4 +1,6 @@
-"""Extension contract for phase two. No host PID is enabled by this release."""
+"""Reserved proposal contract for future cascaded/external-sensor control.
+
+Direct-output tracking plugins are implemented in the algorithms package and run by DeviceWorker."""
 
 from dataclasses import dataclass
 from typing import Protocol
